@@ -1,0 +1,17 @@
+{
+  "name": "point_of_sale",
+  "version": "1.0.0",
+  "description": "ATP3_Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rabin",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "express-fileupload": "^0.2.0",
+    "express-validation": "^1.0.2"
+  }
+}

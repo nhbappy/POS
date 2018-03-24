@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Item Add</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/x.css">
+  <script src="jquery.min.js"></script>
+  <script src="x.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/home">Point Of Sale</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+
+                </ul>
+            </div>
+            <!-- /.nav-collapse -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.navbar -->
+
+    <div class="container-fluid">
+        <div class="row row-offcanvas row-offcanvas-left">
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <div class="sidebar-nav">
+                    <ul class="nav">
+                        <ul class="nav">
+                        <li class="active"><a href="/customerlist">Customers</a></li>
+                        <li><a href="/itemlist">Items</a></li>
+                        <li><a href="/sales">Sales</a></li>
+                        <li class="nav-divider"></li>
+                        <li><a href="/invoicelist">Invoices</a></li>
+                        <li><a href="/additem">Add Item</a></li>
+                        <li><a href="/addcustomer">Add Customer</a></li>
+                        <li class="nav-divider"></li>
+                        <li class="active"><a href="#"></a></li>
+                        <li class="active"><a href="#"></a></li>
+                        <li class="active"><a href="#"></a></li>
+                        <li class="nav-divider"></li>
+                        <li><a href="#"></a></li>
+                        <li class="active"><a href="#"></a></li>
+                        <li class="active"><a href="#"></a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <!--/.well -->
+            </div>
+            <!--/span-->
+
+            <div class="col-xs-12 col-sm-9">
+                <br>
+                <div class="jumbotron">
+                    <form method="post"
+                     ref = 'uploadForm'
+                     id = 'uploadForm'
+                     encType="multipart/form-data">
+                        <ul>
+                          <% errors.forEach(function(err){ %>
+                            <li><%= err.msg %></li>
+                          <% }) %>
+                        </ul>
+                        <div class="form-group">
+                          <label for="usr">Item Name:</label>
+                          <input type="text" class="form-control" name="itemName">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="usr">Category:</label>
+                          <input type="text" class="form-control" name="category">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="usr">Supplier:</label>
+                          <input type="text" class="form-control" name="supplier">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="usr">Manufacturer:</label>
+                          <input type="text" class="form-control" name="manufacturer">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="usr">Buying Price:</label>
+                          <input type="text" class="form-control" name="buyingPrice">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="usr">Selling Price:</label>
+                          <input type="text" class="form-control" name="sellingPrice">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="usr">Quantity:</label>
+                          <input type="text" class="form-control" name="quantity">
+                        </div>
+
+                        <div class="form-group" align="right">
+                          <button type="button" class="btn btn-default"><a href="/itemlist">Cancel</a></button>
+                        </div>
+                        
+                        <div class="form-group" align="left">
+                          <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--/span-->
+
+
+        </div>
+        <!--/row-->
+
+        <hr>
+
+    </div>
+    <!--/.container-->
+</body>
+</html>

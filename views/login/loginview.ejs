@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Our Project</title>
+		<link rel="stylesheet" type="text/css" href="./resources/all.css">
+		<style type="text/css">
+			body
+			{
+				padding: 5px;
+			}
+		</style>
+	</head>
+
+	<body>	
+		<div class="flip-container">
+			<div class="flipper">
+				<div class="front">
+					<div class="holder">
+													  
+
+						<div class="heading login-logo">
+							<img src="./resources/header_logo.png" alt="">                   
+						</div> 
+						<form method="post">
+							<p>Welcome to Our Project. To continue, please login using your id and password below.</p>
+							<input type="text" name="id" value="" class="form-control" placeholder="id" size="20">
+
+							<input type="password" name="password" value="" class="form-control" placeholder="Password" size="20">
+    
+							<div class="clearfix"></div>
+							<button type="submit" class="btn btn-primary btn-block">Login</button>
+						</form>
+						<a href="/signup">Don't have an account ?</a>  
+						<%= message %>      
+					</div>
+				</div>          
+			</div>      
+		</div>
+</body></html>

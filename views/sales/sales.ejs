@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sales</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/x.css">
+  <script src="jquery.min.js"></script>
+  <script src="x.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/home">Point Of Sale</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+
+                </ul>
+            </div>
+            <!-- /.nav-collapse -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.navbar -->
+
+    <div class="container-fluid">
+        <div class="row row-offcanvas row-offcanvas-left">
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <div class="sidebar-nav">
+                    <ul class="nav">
+                        <ul class="nav">
+                        <li class="active"><a href="/customerlist">Customers</a></li>
+                        <li><a href="/itemlist">Items</a></li>
+                        <li><a href="/sales">Sales</a></li>
+                        <li class="nav-divider"></li>
+                        <li><a href="/invoicelist">Invoices</a></li>
+                        <li><a href="/additem">Add Item</a></li>
+                        <li><a href="/addcustomer">Add Customer</a></li>
+                        <li class="nav-divider"></li>
+                        <li class="active"><a href="#"></a></li>
+                        <li class="active"><a href="#"></a></li>
+                        <li class="active"><a href="#"></a></li>
+                        <li class="nav-divider"></li>
+                        <li><a href="#"></a></li>
+                        <li class="active"><a href="#"></a></li>
+                        <li class="active"><a href="#"></a></li>
+                        <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </ul>
+                </div>
+                <!--/.well -->
+            </div>
+            <!--/span-->
+
+            <div class="col-xs-12 col-sm-9">
+                <br>
+                <div class="jumbotron">
+                    <form method="post" ref = 'uploadForm' id = 'uploadForm' encType="multipart/form-data">
+                      
+                      <ul>
+                        <% errors.forEach(function(err){ %>
+                        <li><%= err.msg %></li>
+                        <% }) %>
+                      </ul>
+
+                      <table class="table">
+                        <thread class = "thread-inverse">
+                          <tr>
+                            <th>Item Id</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Manufacturer</th>
+                            <th>Supplier</th>
+                            <th>Buying Price</th>
+                            <th>Selling Price</th>
+                            <th>Action</th>
+                          </tr>
+                          <% for(var i =0; i < itemList.length; i++){
+                            var quantity = itemList[i].productId+'_quantity';
+                          %>
+                            <tr>
+                              <td><%= itemList[i].productId %></td>
+                              <td><%= itemList[i].itemName %></td>
+                              <td><%= itemList[i].category %></td>
+                              <td><%= itemList[i].manufacturer %></td>
+                              <td><%= itemList[i].supplier %></td>
+                              <td><%= itemList[i].buyingPrice %></td>
+                              <td><%= itemList[i].sellingPrice %></td>
+                              <td><input type="checkbox" name="productId" value="<%= itemList[i].productId %>"> | ADD </td>
+                            </tr>
+
+                          <% } %>
+
+                          <div class="form-group" align="left">
+                            <button type="submit" class="btn btn-default">Confirm</button>
+                          </div>
+
+                          <div class="form-group">
+                          <label for="usr">Customer Id:</label>
+                          <input type="text" class="form-control" name="customerId">
+                        </div>
+                        </thread>
+                      </table>
+                    </form>
+                </div>
+            </div>
+            <!--/span-->
+
+
+        </div>
+        <!--/row-->
+
+        <hr>
+
+    </div>
+    <!--/.container-->
+</body>
+</html>
